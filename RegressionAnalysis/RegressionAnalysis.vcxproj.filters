@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="LinearRegression">
+      <UniqueIdentifier>{1ecd0799-1055-4219-b09a-e06ab152a7fd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AverageOutputRegression.cpp">
+      <Filter>LinearRegression</Filter>
+    </ClCompile>
+    <ClCompile Include="ForwardStagewiseRegression.cpp">
+      <Filter>LinearRegression</Filter>
+    </ClCompile>
+    <ClCompile Include="ForwardStepwiseRgression.cpp">
+      <Filter>LinearRegression</Filter>
+    </ClCompile>
+    <ClCompile Include="LeastSquaresRegression.cpp">
+      <Filter>LinearRegression</Filter>
+    </ClCompile>
+    <ClCompile Include="RegressionAnalysisInterface.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AverageOutputRegression.h">
+      <Filter>LinearRegression</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseRegression.h">
+      <Filter>LinearRegression</Filter>
+    </ClInclude>
+    <ClInclude Include="ForwardStagewiseRegression.h">
+      <Filter>LinearRegression</Filter>
+    </ClInclude>
+    <ClInclude Include="ForwardStepwiseRgression.h">
+      <Filter>LinearRegression</Filter>
+    </ClInclude>
+    <ClInclude Include="LeastSquaresRegression.h">
+      <Filter>LinearRegression</Filter>
+    </ClInclude>
+    <ClInclude Include="RegressionAnalysisCommon.h" />
+    <ClInclude Include="RegressionAnalysisExport.h" />
+    <ClInclude Include="RegressionAnalysisInterface.h" />
+  </ItemGroup>
+</Project>

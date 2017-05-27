@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="snailCommon.h" />
+    <ClInclude Include="snailEXPORTS.h" />
+    <ClInclude Include="snailMacro.h" />
+    <ClInclude Include="snailInterface.h" />
+    <ClInclude Include="BaseProduct.h">
+      <Filter>Design Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="Factory.h">
+      <Filter>Design Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleTon.h">
+      <Filter>Design Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="ProductRegistry.h">
+      <Filter>Design Pattern</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Design Pattern">
+      <UniqueIdentifier>{6a6abe73-5699-42dc-8e6b-84bc3f42808c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="snailInterface.cpp" />
+    <ClCompile Include="ProductRegistry.cpp">
+      <Filter>Design Pattern</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
