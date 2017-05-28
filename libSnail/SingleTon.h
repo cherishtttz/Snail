@@ -14,9 +14,7 @@ namespace snail
 				m_pInstance = new T;
 				atexit(destroyInstance);
 			}
-	
 			_ASSERTE(m_pInstance != nullptr);
-	
 			return m_pInstance;
 		}
 	
@@ -29,8 +27,11 @@ namespace snail
 	
 		static void destroyInstance()
 		{
-			delete m_pInstance;
-			m_pInstance = nullptr;
+			if (m_pInstance)
+			{
+				delete m_pInstance;
+				m_pInstance = nullptr;
+			}
 		}
 	};
 	

@@ -17,10 +17,58 @@
     <ClInclude Include="ProductRegistry.h">
       <Filter>Design Pattern</Filter>
     </ClInclude>
+    <ClInclude Include="BaseIntegerSorting.h">
+      <Filter>Algorithm\IntegerSorting</Filter>
+    </ClInclude>
+    <ClInclude Include="CountingSort.h">
+      <Filter>Algorithm\IntegerSorting</Filter>
+    </ClInclude>
+    <ClInclude Include="RadixSort.h">
+      <Filter>Algorithm\IntegerSorting</Filter>
+    </ClInclude>
+    <ClInclude Include="BucketSort.h">
+      <Filter>Algorithm\IntegerSorting</Filter>
+    </ClInclude>
+    <ClInclude Include="AverageOutputRegression.h">
+      <Filter>Algorithm\RegressionAnalysis</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseRegression.h">
+      <Filter>Algorithm\RegressionAnalysis</Filter>
+    </ClInclude>
+    <ClInclude Include="ForwardStagewiseRegression.h">
+      <Filter>Algorithm\RegressionAnalysis</Filter>
+    </ClInclude>
+    <ClInclude Include="ForwardStepwiseRgression.h">
+      <Filter>Algorithm\RegressionAnalysis</Filter>
+    </ClInclude>
+    <ClInclude Include="LeastSquaresRegression.h">
+      <Filter>Algorithm\RegressionAnalysis</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseCluster.h">
+      <Filter>Algorithm\Cluster</Filter>
+    </ClInclude>
+    <ClInclude Include="CMeans.h">
+      <Filter>Algorithm\Cluster</Filter>
+    </ClInclude>
+    <ClInclude Include="KMeans.h">
+      <Filter>Algorithm\Cluster</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Design Pattern">
       <UniqueIdentifier>{6a6abe73-5699-42dc-8e6b-84bc3f42808c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Algorithm">
+      <UniqueIdentifier>{c5163f17-ccd0-432c-9003-d7cfe8851bbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Algorithm\IntegerSorting">
+      <UniqueIdentifier>{9fc92540-163f-416b-a199-2831d8e7dfc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Algorithm\RegressionAnalysis">
+      <UniqueIdentifier>{94e97161-5eba-4d3b-8222-8e647fb4691b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Algorithm\Cluster">
+      <UniqueIdentifier>{bd3abb9b-f9fa-4b00-9f0b-bb32cb75d3c1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -28,5 +76,33 @@
     <ClCompile Include="ProductRegistry.cpp">
       <Filter>Design Pattern</Filter>
     </ClCompile>
+    <ClCompile Include="CountingSort.cpp">
+      <Filter>Algorithm\IntegerSorting</Filter>
+    </ClCompile>
+    <ClCompile Include="RadixSort.cpp">
+      <Filter>Algorithm\IntegerSorting</Filter>
+    </ClCompile>
+    <ClCompile Include="BucketSort.cpp">
+      <Filter>Algorithm\IntegerSorting</Filter>
+    </ClCompile>
+    <ClCompile Include="AverageOutputRegression.cpp">
+      <Filter>Algorithm\RegressionAnalysis</Filter>
+    </ClCompile>
+    <ClCompile Include="ForwardStagewiseRegression.cpp">
+      <Filter>Algorithm\RegressionAnalysis</Filter>
+    </ClCompile>
+    <ClCompile Include="ForwardStepwiseRgression.cpp">
+      <Filter>Algorithm\RegressionAnalysis</Filter>
+    </ClCompile>
+    <ClCompile Include="LeastSquaresRegression.cpp">
+      <Filter>Algorithm\RegressionAnalysis</Filter>
+    </ClCompile>
+    <ClCompile Include="CMeans.cpp">
+      <Filter>Algorithm\Cluster</Filter>
+    </ClCompile>
+    <ClCompile Include="KMeans.cpp">
+      <Filter>Algorithm\Cluster</Filter>
+    </ClCompile>
+    <ClCompile Include="snailCommon.cpp" />
   </ItemGroup>
 </Project>

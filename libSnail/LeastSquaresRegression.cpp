@@ -2,11 +2,12 @@
 #include <Eigen/Dense>
 #include <numeric>
 #include "Factory.h"
-#include "RegressionAnalysisCommon.h"
+#include "snailCommon.h"
 
-using namespace snailRegression;
+using namespace snail;
+using namespace snail::RegressionAnalysis;
 
-snail::CFactory<CLeastSquaresRegression> theCreator(LEAST_SQUARES_REGRESSION);
+CFactory<CLeastSquaresRegression> theCreator(LEAST_SQUARES_REGRESSION);
 
 BOOST_CLASS_EXPORT_GUID(CLeastSquaresRegression, "CLeastSquaresRegression");
 

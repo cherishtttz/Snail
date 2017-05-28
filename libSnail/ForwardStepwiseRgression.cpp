@@ -1,10 +1,11 @@
 #include "ForwardStepwiseRgression.h"
 #include "Factory.h"
-#include "RegressionAnalysisCommon.h"
+#include "snailCommon.h"
 
-using namespace snailRegression;
+using namespace snail;
+using namespace snail::RegressionAnalysis;
 
-snail::CFactory<CForwardStepwiseRegression> theCreator(FORWARD_STEPWISE_REGRESSION);
+CFactory<CForwardStepwiseRegression> theCreator(FORWARD_STEPWISE_REGRESSION);
 
 BOOST_CLASS_EXPORT_GUID(CForwardStepwiseRegression, "CForwardStepwiseRegression");
 
