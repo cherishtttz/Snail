@@ -1,8 +1,8 @@
 #include <memory>
 #include <string>
 #include <map>
-#include "snailMacro.h"
-#include "snailInterface.h"
+#include "../libSnail/snailMacro.h"
+#include "../libSnail/snailInterface.h"
 #include "MyProduct.h"
 
 //FUNCTION: detect the memory leak in DEBUG mode
@@ -24,13 +24,20 @@ void main()
 {
 	installMemoryLeakDetector();
 
-	IMyBaseProduct* pMyProduct = nullptr;
-	pMyProduct = dynamic_cast<IMyBaseProduct*>(snail::snailCreateProduct("ProductA"));
-	pMyProduct->printV();
-	_Delete_If_Not_Empty(pMyProduct);
-	pMyProduct = dynamic_cast<IMyBaseProduct*>(snail::snailCreateProduct("ProductB"));
-	pMyProduct->printV();
-	_Delete_If_Not_Empty(pMyProduct);
+	try
+	{
+		IMyBaseProduct* pMyProduct = nullptr;
+		pMyProduct = dynamic_cast<IMyBaseProduct*>(snail::snailCreateProduct("ProductA"));
+		pMyProduct->printV();
+		_Delete_If_Not_Empty(pMyProduct);
+		pMyProduct = dynamic_cast<IMyBaseProduct*>(snail::snailCreateProduct("ProductB"));
+		pMyProduct->printV();
+		_Delete_If_Not_Empty(pMyProduct);
+	}
+	catch (const std::exception&)
+	{
+		_Log("The program is terminated due to unexpected error.");
+	}
 
 	system("pause");
 }

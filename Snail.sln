@@ -9,9 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{F2
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest-001(Factory)", "UnitTest-001(Factory)\UnitTest-001(Factory).vcxproj", "{A76240C1-3DA0-44B6-9C7F-FD22385F0EB9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RegressionAnalysis", "RegressionAnalysis\RegressionAnalysis.vcxproj", "{68D6D012-CD35-4DBA-8BB2-CEA4ED76F86E}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest-101(LinearRegression)", "UnitTest-101(LinearRegression)\UnitTest-101(LinearRegression).vcxproj", "{865EA54F-CC0D-4A95-86D1-B353F22BB65E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest-002(IntegerSorting)", "UnitTest-002(IntegerSorting)\UnitTest-002(IntegerSorting).vcxproj", "{D2E86DE1-00DE-499A-86A6-DD1DF6331109}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest-201(ClusteringAlgorithm)", "UnitTest-201(ClusteringAlgorithm)\UnitTest-201(ClusteringAlgorithm).vcxproj", "{2A3D733E-4417-4477-9F14-94DCEC275B44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,14 +39,6 @@ Global
 		{A76240C1-3DA0-44B6-9C7F-FD22385F0EB9}.Release|x64.Build.0 = Release|x64
 		{A76240C1-3DA0-44B6-9C7F-FD22385F0EB9}.Release|x86.ActiveCfg = Release|Win32
 		{A76240C1-3DA0-44B6-9C7F-FD22385F0EB9}.Release|x86.Build.0 = Release|Win32
-		{68D6D012-CD35-4DBA-8BB2-CEA4ED76F86E}.Debug|x64.ActiveCfg = Debug|x64
-		{68D6D012-CD35-4DBA-8BB2-CEA4ED76F86E}.Debug|x64.Build.0 = Debug|x64
-		{68D6D012-CD35-4DBA-8BB2-CEA4ED76F86E}.Debug|x86.ActiveCfg = Debug|Win32
-		{68D6D012-CD35-4DBA-8BB2-CEA4ED76F86E}.Debug|x86.Build.0 = Debug|Win32
-		{68D6D012-CD35-4DBA-8BB2-CEA4ED76F86E}.Release|x64.ActiveCfg = Release|x64
-		{68D6D012-CD35-4DBA-8BB2-CEA4ED76F86E}.Release|x64.Build.0 = Release|x64
-		{68D6D012-CD35-4DBA-8BB2-CEA4ED76F86E}.Release|x86.ActiveCfg = Release|Win32
-		{68D6D012-CD35-4DBA-8BB2-CEA4ED76F86E}.Release|x86.Build.0 = Release|Win32
 		{865EA54F-CC0D-4A95-86D1-B353F22BB65E}.Debug|x64.ActiveCfg = Debug|x64
 		{865EA54F-CC0D-4A95-86D1-B353F22BB65E}.Debug|x64.Build.0 = Debug|x64
 		{865EA54F-CC0D-4A95-86D1-B353F22BB65E}.Debug|x86.ActiveCfg = Debug|Win32
@@ -53,6 +47,22 @@ Global
 		{865EA54F-CC0D-4A95-86D1-B353F22BB65E}.Release|x64.Build.0 = Release|x64
 		{865EA54F-CC0D-4A95-86D1-B353F22BB65E}.Release|x86.ActiveCfg = Release|Win32
 		{865EA54F-CC0D-4A95-86D1-B353F22BB65E}.Release|x86.Build.0 = Release|Win32
+		{D2E86DE1-00DE-499A-86A6-DD1DF6331109}.Debug|x64.ActiveCfg = Debug|x64
+		{D2E86DE1-00DE-499A-86A6-DD1DF6331109}.Debug|x64.Build.0 = Debug|x64
+		{D2E86DE1-00DE-499A-86A6-DD1DF6331109}.Debug|x86.ActiveCfg = Debug|Win32
+		{D2E86DE1-00DE-499A-86A6-DD1DF6331109}.Debug|x86.Build.0 = Debug|Win32
+		{D2E86DE1-00DE-499A-86A6-DD1DF6331109}.Release|x64.ActiveCfg = Release|x64
+		{D2E86DE1-00DE-499A-86A6-DD1DF6331109}.Release|x64.Build.0 = Release|x64
+		{D2E86DE1-00DE-499A-86A6-DD1DF6331109}.Release|x86.ActiveCfg = Release|Win32
+		{D2E86DE1-00DE-499A-86A6-DD1DF6331109}.Release|x86.Build.0 = Release|Win32
+		{2A3D733E-4417-4477-9F14-94DCEC275B44}.Debug|x64.ActiveCfg = Debug|x64
+		{2A3D733E-4417-4477-9F14-94DCEC275B44}.Debug|x64.Build.0 = Debug|x64
+		{2A3D733E-4417-4477-9F14-94DCEC275B44}.Debug|x86.ActiveCfg = Debug|Win32
+		{2A3D733E-4417-4477-9F14-94DCEC275B44}.Debug|x86.Build.0 = Debug|Win32
+		{2A3D733E-4417-4477-9F14-94DCEC275B44}.Release|x64.ActiveCfg = Release|x64
+		{2A3D733E-4417-4477-9F14-94DCEC275B44}.Release|x64.Build.0 = Release|x64
+		{2A3D733E-4417-4477-9F14-94DCEC275B44}.Release|x86.ActiveCfg = Release|Win32
+		{2A3D733E-4417-4477-9F14-94DCEC275B44}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,5 +70,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A76240C1-3DA0-44B6-9C7F-FD22385F0EB9} = {F2F067ED-353D-4850-855C-C51C9775CBED}
 		{865EA54F-CC0D-4A95-86D1-B353F22BB65E} = {F2F067ED-353D-4850-855C-C51C9775CBED}
+		{D2E86DE1-00DE-499A-86A6-DD1DF6331109} = {F2F067ED-353D-4850-855C-C51C9775CBED}
+		{2A3D733E-4417-4477-9F14-94DCEC275B44} = {F2F067ED-353D-4850-855C-C51C9775CBED}
 	EndGlobalSection
 EndGlobal
