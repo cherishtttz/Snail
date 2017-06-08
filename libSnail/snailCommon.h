@@ -12,6 +12,7 @@ namespace snail
 		const std::string COUNTING_SORT = "COUNTING_SORT";
 		const std::string RADIX_SORT = "RADIX_SORT";
 		const std::string BUCKET_SORT = "BUCKET_SORT";
+		const std::string QUICK_SORT = "QUICK_SORT";
 	}
 
 	namespace RegressionAnalysis

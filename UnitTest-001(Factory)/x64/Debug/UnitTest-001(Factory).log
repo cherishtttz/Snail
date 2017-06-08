@@ -1,0 +1,33 @@
+﻿  Test-Factory.cpp
+c:\sdk\snail\snail\libsnail\productregistry.h(25): warning C4251: 'snail::CProductRegistry::m_Registry': class 'std::map<std::string,snail::ProductCreator,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'snail::CProductRegistry'
+          with
+          [
+              _Kty=std::string,
+              _Ty=snail::ProductCreator
+          ]
+  c:\sdk\snail\snail\libsnail\productregistry.h(25): note: see declaration of 'std::map<std::string,snail::ProductCreator,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
+          with
+          [
+              _Kty=std::string,
+              _Ty=snail::ProductCreator
+          ]
+c:\sdk\snail\snail\libsnail\basecluster.h(23): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+c:\sdk\snail\snail\libsnail\basecluster.h(83): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+c:\sdk\snail\snail\unittest-001(factory)\test-factory.cpp(32): warning C4390: ';': empty controlled statement found; is this the intent?
+c:\sdk\snail\snail\unittest-001(factory)\test-factory.cpp(35): warning C4390: ';': empty controlled statement found; is this the intent?
+  MyProduct.cpp
+c:\sdk\snail\snail\libsnail\productregistry.h(25): warning C4251: 'snail::CProductRegistry::m_Registry': class 'std::map<std::string,snail::ProductCreator,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'snail::CProductRegistry'
+          with
+          [
+              _Kty=std::string,
+              _Ty=snail::ProductCreator
+          ]
+  c:\sdk\snail\snail\libsnail\productregistry.h(25): note: see declaration of 'std::map<std::string,snail::ProductCreator,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
+          with
+          [
+              _Kty=std::string,
+              _Ty=snail::ProductCreator
+          ]
+  Generating Code...
+  UnitTest-001(Factory).vcxproj -> C:\SDK\Snail\Snail\x64\Debug\UnitTest-001(Factory).exe
+  UnitTest-001(Factory).vcxproj -> C:\SDK\Snail\Snail\x64\Debug\UnitTest-001(Factory).pdb (Partial PDB)

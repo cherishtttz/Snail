@@ -21,6 +21,16 @@ bool snail::isFileExsit(const std::string& vFilePath)
 	return access(vFilePath.c_str(), 0) == 0;
 }
 
+//*********************************************************************
+//FUNCTION:
+inline void snail::swapTwoIntegers(int& vA, int& vB)
+{
+	if (vA == vB) return;
+	vA ^= vB;
+	vB ^= vA;
+	vA ^= vB;
+}
+
 //****************************************************************************************************
 //FUNCTION:
 int snail::generateRandomIntegerNumber(const int vRangeFrom, const int vRangeTo)

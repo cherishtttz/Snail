@@ -37,11 +37,22 @@ void main()
 
 	try
 	{
-		std::vector<int> IntegersSet{ 2,1,45,23,7,100 };
-		const std::string SortingAlgorithm = snail::SortingAlgorithm::COUNTING_SORT;
-		snail::SortingAlgorithm::snailSortIntegersSet(IntegersSet, SortingAlgorithm);
-		//std::sort(IntegersSet.begin(), IntegersSet.end());
-		std::cout << "Is [" << SortingAlgorithm << "] works : " << isIntegersSetInIncreaseOrder(IntegersSet) << "\n\n";
+		int SizeVec = 10000;
+		std::vector<int> IntegersSet;
+		for (auto Itr = 0; Itr < SizeVec; ++Itr)
+		{
+			IntegersSet.clear();
+			for (auto i = 0; i < SizeVec; ++i) IntegersSet.push_back(snail::generateRandomIntegerNumber(0, 100000));
+			const std::string SortingAlgorithm = snail::SortingAlgorithm::QUICK_SORT;
+			snail::SortingAlgorithm::snailSortIntegersSet(IntegersSet, SortingAlgorithm);
+			if (!isIntegersSetInIncreaseOrder(IntegersSet))
+			{
+				std::cout << "Test failed using [" + SortingAlgorithm + "].\n\n";
+				break;
+			}
+			if (Itr == SizeVec - 1)
+				std::cout << "Test passed using [" + SortingAlgorithm + "].\n\n";
+		}
 	}
 	catch (const std::exception&)
 	{

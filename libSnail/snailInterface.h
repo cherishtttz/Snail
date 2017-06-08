@@ -8,7 +8,11 @@
 
 namespace snail
 {
+	template <typename T>
+	bool isInBetween(const T& vData, const T& vMin, const T& vMax);
+
 	SNAIL_DLL_EXPORT bool		isFileExsit(const std::string& vFilePath);
+	SNAIL_DLL_EXPORT void		swapTwoIntegers(int& vA, int& vB);
 	SNAIL_DLL_EXPORT int		generateRandomIntegerNumber(const int vRangeFrom, const int vRangeTo);
 	SNAIL_DLL_EXPORT void		generateRandomIntegerSetWithoutReplacement(const int vMin, const int vMax, const int vSize, std::vector<int>& voIntegerSet);
 	SNAIL_DLL_EXPORT double		generateRandomFloatNumber(const double vRangeFrom, const double vRangeTo);
@@ -30,4 +34,12 @@ namespace snail
 		SNAIL_DLL_EXPORT IBaseLinearRegression* snailTrainLinearRegressionModel(const std::vector<std::vector<double>>& vInput, const std::vector<double>& vOutput, const std::string& vModelSig);
 		SNAIL_DLL_EXPORT void evaluateLinearRegressionModel(const std::vector<std::vector<double>>& vInput, const std::vector<double>& vOutput, const IBaseLinearRegression* vModel);
 	}
+}
+
+//*********************************************************************
+//FUNCTION:
+template <typename T>
+inline bool snail::isInBetween(const T& vData, const T& vMin, const T& vMax)
+{
+	return vData >= vMin && vData <= vMax;
 }
