@@ -1,4 +1,4 @@
-#include "ForwardStepwiseRgression.h"
+#include "ForwardStepwiseRegression.h"
 #include "Factory.h"
 #include "MachineLearningCommon.h"
 
