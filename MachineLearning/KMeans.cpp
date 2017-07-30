@@ -1,12 +1,11 @@
 #include "KMeans.h"
-#include "snailCommon.h"
+#include "MachineLearningCommon.h"
 #include "Factory.h"
 #include "snailInterface.h"
 
-using namespace snail;
-using namespace snail::ClusteringAlgorithm;
+using namespace machineLearning::ClusteringAlgorithm;
 
-CFactory<CKMeans> theCreator(K_MEANS);
+snail::CFactory<CKMeans> theCreator(K_MEANS);
 
 CKMeans::CKMeans(void)
 {
@@ -90,7 +89,7 @@ void CKMeans::__updateClusterGroup(const std::vector<std::vector<double>>& vData
 		int CenterIndex = 0;
 		for (int j = 0; j < vNumGroups; ++j)
 		{
-			double CurrentDistance = calculateEuclideanDistance(vDataset[i], voClusters[j].m_Center);
+			double CurrentDistance = snail::calculateEuclideanDistance(vDataset[i], voClusters[j].m_Center);
 			if (CurrentDistance < Distance)
 			{
 				CenterIndex = j;
@@ -108,7 +107,7 @@ double CKMeans::__getVariance(std::vector<SCluster>& voClusters)
 	double Variance = 0.0;
 	for (int i = 0; i < voClusters.size(); ++i)
 		for (int j = 0; j < voClusters[i].m_ClusterSamples.size(); ++j)
-			Variance += calculateEuclideanDistance(voClusters[i].m_ClusterSamples[j], voClusters[i].m_Center);
+			Variance += snail::calculateEuclideanDistance(voClusters[i].m_ClusterSamples[j], voClusters[i].m_Center);
 
 	return Variance;
 }

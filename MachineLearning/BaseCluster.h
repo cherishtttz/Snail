@@ -1,9 +1,9 @@
 #pragma once
 #include <vector>
 #include "BaseProduct.h"
-#include "snailCommon.h"
+#include "snailInterface.h"
 
-namespace snail
+namespace machineLearning
 {
 	namespace ClusteringAlgorithm
 	{
@@ -62,11 +62,11 @@ namespace snail
 				std::vector<double> SubSample;
 				for (auto Itr : m_FeatureIndexSet)
 					SubSample.push_back(m_FeatureIndexSet[Itr]);
-				return calculateEuclideanDistance(SubSample, m_Center);
+				return snail::calculateEuclideanDistance(SubSample, m_Center);
 			}
 		};
 	
-		class IBaseCluster : public CBaseProduct
+		class IBaseCluster : public snail::CBaseProduct
 		{
 		public:
 			virtual ~IBaseCluster() {}

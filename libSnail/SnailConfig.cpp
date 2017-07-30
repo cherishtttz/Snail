@@ -6,7 +6,6 @@ CSnailConfig::CSnailConfig()
 {
 }
 
-
 CSnailConfig::~CSnailConfig()
 {
 }

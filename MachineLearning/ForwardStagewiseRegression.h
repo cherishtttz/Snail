@@ -1,7 +1,7 @@
 #pragma once
 #include "BaseRegression.h"
 
-namespace snail
+namespace machineLearning
 {
 	namespace RegressionAnalysis
 	{

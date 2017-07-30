@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include <vector>
-#include "../libSnail/snailInterface.h"
-#include "../libSnail/snailMacro.h"
-#include "../libSnail/snailCommon.h"
+#include "MachineLearningInterface.h"
+#include "MachineLearningCommon.h"
+#include "snailInterface.h"
 
 //FUNCTION: detect the memory leak in DEBUG mode
 void installMemoryLeakDetector()
@@ -30,8 +30,8 @@ void main()
 		if (snail::snailReadDatasetFromFile("../Dataset/Iris_no_header_no_lable.csv", DataTable, false))
 		{
 			std::vector<int> FeatureIndexSet{ 0,1,2,3 };
-			std::vector<snail::ClusteringAlgorithm::SCluster> Clusters;
-			snail::ClusteringAlgorithm::clusterDataIntoGroups(DataTable, FeatureIndexSet, 3, snail::ClusteringAlgorithm::K_MEANS, Clusters);
+			std::vector<machineLearning::ClusteringAlgorithm::SCluster> Clusters;
+			machineLearning::ClusteringAlgorithm::clusterDataIntoGroups(DataTable, FeatureIndexSet, 3, machineLearning::ClusteringAlgorithm::K_MEANS, Clusters);
 			//NOTES : 对每一个DataTable中的数据进行测试，在所有聚类中，离某聚类近即属于该类
 			{
 				//Cluster Summary : 结果稳定并且和书中 experiments 的结果几乎一样

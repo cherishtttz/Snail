@@ -3,8 +3,9 @@
 #include <stdlib.h>
 #include <iostream>
 #include <algorithm>
+#include "../Algorithm/AlgorithmCommon.h"
+#include "../Algorithm/AlgorithmInterface.h"
 #include "../libSnail/snailInterface.h"
-#include "../libSnail/snailCommon.h"
 
 //FUNCTION: detect the memory leak in DEBUG mode
 void installMemoryLeakDetector()
@@ -37,14 +38,14 @@ void main()
 
 	try
 	{
-		int SizeVec = 10000;
+		int SizeVec = 100;
 		std::vector<int> IntegersSet;
 		for (auto Itr = 0; Itr < SizeVec; ++Itr)
 		{
 			IntegersSet.clear();
 			for (auto i = 0; i < SizeVec; ++i) IntegersSet.push_back(snail::generateRandomIntegerNumber(0, 100000));
-			const std::string SortingAlgorithm = snail::SortingAlgorithm::QUICK_SORT;
-			snail::SortingAlgorithm::snailSortIntegersSet(IntegersSet, SortingAlgorithm);
+			const std::string SortingAlgorithm = algorithm::SortingAlgorithm::QUICK_SORT;
+			algorithm::SortingAlgorithm::snailSortIntegersSet(IntegersSet, SortingAlgorithm);
 			if (!isIntegersSetInIncreaseOrder(IntegersSet))
 			{
 				std::cout << "Test failed using [" + SortingAlgorithm + "].\n\n";

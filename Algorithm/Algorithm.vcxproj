@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{F96922C9-7E61-493C-A2F9-03285F6A4E9C}</ProjectGuid>
-    <RootNamespace>libSnail</RootNamespace>
+    <ProjectGuid>{1718774B-8236-4EE4-A002-23C5D2ACC872}</ProjectGuid>
+    <RootNamespace>Algorithm</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -41,14 +41,14 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -83,12 +83,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>SNAIL_EXPORTS;DEBUG;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DisableSpecificWarnings>4251;4996;4267;4244;</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(BOOST);$(EIGEN);</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ALGORITHM_DLL_EXPORTS;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../libSnail;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(BOOST)/x64;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../x64/debug;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libSnail_d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -111,31 +111,22 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>SNAIL_EXPORTS;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DisableSpecificWarnings>4251;4996;4267;4244;</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(BOOST);$(EIGEN);</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(BOOST)/x64;</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="BaseProduct.h" />
-    <ClInclude Include="ProductRegistry.h" />
-    <ClInclude Include="SingleTon.h" />
-    <ClInclude Include="snailCommon.h" />
-    <ClInclude Include="SnailConfig.h" />
-    <ClInclude Include="snailEXPORTS.h" />
-    <ClInclude Include="Factory.h" />
-    <ClInclude Include="snailInterface.h" />
-    <ClInclude Include="snailMacro.h" />
+    <ClInclude Include="AlgorithmCommon.h" />
+    <ClInclude Include="AlgorithmEXPORT.h" />
+    <ClInclude Include="AlgorithmInterface.h" />
+    <ClInclude Include="BaseIntegerSorting.h" />
+    <ClInclude Include="QuickSort.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ProductRegistry.cpp" />
-    <ClCompile Include="SnailConfig.cpp" />
-    <ClCompile Include="snailInterface.cpp" />
+    <ClCompile Include="AlgorithmInterface.cpp" />
+    <ClCompile Include="QuickSort.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

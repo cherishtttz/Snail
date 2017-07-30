@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="AlgorithmEXPORT.h" />
+    <ClInclude Include="AlgorithmInterface.h" />
+    <ClInclude Include="BaseIntegerSorting.h">
+      <Filter>Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="QuickSort.h">
+      <Filter>Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="AlgorithmCommon.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Sorting">
+      <UniqueIdentifier>{ea21ccbd-af15-4768-a5ac-e045286f3458}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="QuickSort.cpp">
+      <Filter>Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="AlgorithmInterface.cpp" />
+  </ItemGroup>
+</Project>

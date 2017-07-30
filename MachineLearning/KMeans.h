@@ -1,7 +1,7 @@
 #pragma once
 #include "BaseCluster.h"
 
-namespace snail
+namespace machineLearning
 {
 	namespace ClusteringAlgorithm
 	{

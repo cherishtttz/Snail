@@ -6,11 +6,11 @@
 #include <boost/serialization/export.hpp>
 #include "BaseProduct.h"
 
-namespace snail
+namespace machineLearning
 {
 	namespace RegressionAnalysis
 	{
-		class IBaseLinearRegression : public CBaseProduct
+		class IBaseLinearRegression : public snail::CBaseProduct
 		{
 		public:
 			virtual ~IBaseLinearRegression() {}

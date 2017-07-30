@@ -12,7 +12,7 @@ namespace snail
 
 	typedef CBaseProduct*(*ProductCreator)();
 
-	class SNAIL_DLL_EXPORT CProductRegistry : public CSingleTon<CProductRegistry>
+	class SNAIL_API CProductRegistry : public CSingleTon<CProductRegistry>
 	{
 	public:
 		~CProductRegistry() {}

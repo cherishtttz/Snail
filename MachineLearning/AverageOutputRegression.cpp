@@ -1,12 +1,11 @@
 #include "AverageOutputRegression.h"
 #include <numeric>
 #include "Factory.h"
-#include "snailCommon.h"
+#include "MachineLearningCommon.h"
 
-using namespace snail;
-using namespace snail::RegressionAnalysis;
+using namespace machineLearning::RegressionAnalysis;
 
-CFactory<CAverageOutputRegression> theCreator(AVERAGE_OUTPUT_REGRESSION);
+snail::CFactory<CAverageOutputRegression> theCreator(AVERAGE_OUTPUT_REGRESSION);
 
 BOOST_CLASS_EXPORT_GUID(CAverageOutputRegression, "CAverageOutputRegression");
 

@@ -2,7 +2,7 @@
 
 namespace snail
 {
-	//NOTES : not working with multi-threads
+	//NOTES : may not working with multi-threads
 	template<class T>
 	class CSingleTon
 	{

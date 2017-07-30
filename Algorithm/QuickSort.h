@@ -1,7 +1,7 @@
 #pragma 
 #include "BaseIntegerSorting.h"
 
-namespace snail
+namespace algorithm
 {
 	namespace SortingAlgorithm
 	{

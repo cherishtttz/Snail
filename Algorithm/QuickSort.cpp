@@ -1,12 +1,11 @@
 #include "QuickSort.h"
 #include "Factory.h"
-#include "snailCommon.h"
+#include "AlgorithmCommon.h"
 #include "snailInterface.h"
 
-using namespace snail;
-using namespace snail::SortingAlgorithm;
+using namespace algorithm::SortingAlgorithm;
 
-CFactory<CQuickSort> theCreator(QUICK_SORT);
+snail::CFactory<CQuickSort> theCreator(QUICK_SORT);
 
 CQuickSort::CQuickSort()
 {
@@ -28,21 +27,21 @@ void CQuickSort::sortIntegersSetV(std::vector<int>& voIntegersSet)
 //FUNCTION:
 void CQuickSort::__sortIntegersSet(const int vRangeFrom, const int vRangeTo, std::vector<int>& voIntegersSet)
 {
-	if (isInBetween<int>(vRangeTo, 0, voIntegersSet.size()) && isInBetween<int>(vRangeFrom, 0, vRangeTo))
+	if (snail::isInBetween<int>(vRangeTo, 0, voIntegersSet.size()) && snail::isInBetween<int>(vRangeFrom, 0, vRangeTo))
 	{
 		if (vRangeTo - vRangeFrom <= 1)
 		{
 			if (voIntegersSet[vRangeFrom] > voIntegersSet[vRangeTo])
-				swapTwoIntegers(voIntegersSet[vRangeFrom], voIntegersSet[vRangeTo]);
+				snail::swapTwoIntegers(voIntegersSet[vRangeFrom], voIntegersSet[vRangeTo]);
 			return;
 		}
 		int Pivot = voIntegersSet[vRangeTo];
 		int WallIndex = vRangeFrom - 1;
 		for (auto i = vRangeFrom; i < vRangeTo; ++i)
 		{
-			if (voIntegersSet[i] < Pivot) swapTwoIntegers(voIntegersSet[i], voIntegersSet[++WallIndex]);
+			if (voIntegersSet[i] < Pivot) snail::swapTwoIntegers(voIntegersSet[i], voIntegersSet[++WallIndex]);
 		}
-		swapTwoIntegers(voIntegersSet[vRangeTo], voIntegersSet[++WallIndex]);
+		snail::swapTwoIntegers(voIntegersSet[vRangeTo], voIntegersSet[++WallIndex]);
 
 		__sortIntegersSet(vRangeFrom, WallIndex - 1, voIntegersSet);
 		__sortIntegersSet(WallIndex + 1, vRangeTo, voIntegersSet);

@@ -1,6 +1,6 @@
 #pragma once
 #ifndef SNAIL_EXPORTS
-#define SNAIL_DLL_EXPORT __declspec(dllimport)
+#define SNAIL_API __declspec(dllimport)
 #else
-#define SNAIL_DLL_EXPORT __declspec(dllexport)
+#define SNAIL_API __declspec(dllexport)
 #endif

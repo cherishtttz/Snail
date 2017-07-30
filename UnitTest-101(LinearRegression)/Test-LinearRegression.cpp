@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include <vector>
-#include "../libSnail/snailInterface.h"
-#include "../libSnail/snailMacro.h"
-#include "../libSnail/snailCommon.h"
+#include "MachineLearningInterface.h"
+#include "MachineLearningCommon.h"
+#include "snailInterface.h"
 
 //FUNCTION: detect the memory leak in DEBUG mode
 void installMemoryLeakDetector()
@@ -43,10 +43,10 @@ void generateTrainingSet(std::vector<std::vector<double>>& voInput, std::vector<
 void testLinearRegressionModel(std::vector<std::vector<double>>& vInput, std::vector<double>& vOutput, const std::string& vSig)
 {
 	clock_t TrainBegin = clock();
-	snail::RegressionAnalysis::IBaseLinearRegression* pLinearRegression = snail::RegressionAnalysis::snailTrainLinearRegressionModel(vInput, vOutput, vSig);
+	machineLearning::RegressionAnalysis::IBaseLinearRegression* pLinearRegression = machineLearning::RegressionAnalysis::snailTrainLinearRegressionModel(vInput, vOutput, vSig);
 	clock_t TrainEnd = clock();
 	std::cout << "Training regression model [" << vSig << "] complete in " << (TrainEnd - TrainBegin) / CLOCKS_PER_SEC << " seconds.\n";
-	snail::RegressionAnalysis::evaluateLinearRegressionModel(vInput, vOutput, pLinearRegression);
+	machineLearning::RegressionAnalysis::evaluateLinearRegressionModel(vInput, vOutput, pLinearRegression);
 	_Delete_If_Not_Empty(pLinearRegression);
 }
 
@@ -58,10 +58,10 @@ void main()
 		std::vector<std::vector<double>> Input;
 		std::vector<double> Output;
 		generateTrainingSet(Input, Output);
-		testLinearRegressionModel(Input, Output, snail::RegressionAnalysis::FORWARD_STAGEWISE_REGRESSION);
-		testLinearRegressionModel(Input, Output, snail::RegressionAnalysis::AVERAGE_OUTPUT_REGRESSION);
-		testLinearRegressionModel(Input, Output, snail::RegressionAnalysis::LEAST_SQUARES_REGRESSION);
-		testLinearRegressionModel(Input, Output, snail::RegressionAnalysis::FORWARD_STEPWISE_REGRESSION);
+		testLinearRegressionModel(Input, Output, machineLearning::RegressionAnalysis::FORWARD_STAGEWISE_REGRESSION);
+		testLinearRegressionModel(Input, Output, machineLearning::RegressionAnalysis::AVERAGE_OUTPUT_REGRESSION);
+		testLinearRegressionModel(Input, Output, machineLearning::RegressionAnalysis::LEAST_SQUARES_REGRESSION);
+		testLinearRegressionModel(Input, Output, machineLearning::RegressionAnalysis::FORWARD_STEPWISE_REGRESSION);
 	}
 	catch (const std::exception&)
 	{

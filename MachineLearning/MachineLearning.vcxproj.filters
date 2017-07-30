@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="MachineLearningEXPORT.h" />
+    <ClInclude Include="MachineLearningInterface.h" />
+    <ClInclude Include="AverageOutputRegression.h">
+      <Filter>Regression</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseRegression.h">
+      <Filter>Regression</Filter>
+    </ClInclude>
+    <ClInclude Include="ForwardStagewiseRegression.h">
+      <Filter>Regression</Filter>
+    </ClInclude>
+    <ClInclude Include="ForwardStepwiseRgression.h">
+      <Filter>Regression</Filter>
+    </ClInclude>
+    <ClInclude Include="LeastSquaresRegression.h">
+      <Filter>Regression</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseCluster.h">
+      <Filter>Clustering</Filter>
+    </ClInclude>
+    <ClInclude Include="CMeans.h">
+      <Filter>Clustering</Filter>
+    </ClInclude>
+    <ClInclude Include="KMeans.h">
+      <Filter>Clustering</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineLearningCommon.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Regression">
+      <UniqueIdentifier>{c2f0fa04-8264-4945-a984-11f3064e140b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Clustering">
+      <UniqueIdentifier>{cd847fa6-065e-47d2-876a-5fa7566611e1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AverageOutputRegression.cpp">
+      <Filter>Regression</Filter>
+    </ClCompile>
+    <ClCompile Include="ForwardStagewiseRegression.cpp">
+      <Filter>Regression</Filter>
+    </ClCompile>
+    <ClCompile Include="ForwardStepwiseRgression.cpp">
+      <Filter>Regression</Filter>
+    </ClCompile>
+    <ClCompile Include="LeastSquaresRegression.cpp">
+      <Filter>Regression</Filter>
+    </ClCompile>
+    <ClCompile Include="CMeans.cpp">
+      <Filter>Clustering</Filter>
+    </ClCompile>
+    <ClCompile Include="KMeans.cpp">
+      <Filter>Clustering</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineLearningInterface.cpp" />
+  </ItemGroup>
+</Project>

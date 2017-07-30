@@ -2,11 +2,11 @@
 #include "BaseProduct.h"
 #include <vector>
 
-namespace snail
+namespace algorithm
 {
 	namespace SortingAlgorithm
 	{
-		class IBaseIntegerSorting : public CBaseProduct
+		class IBaseIntegerSorting : public snail::CBaseProduct
 		{
 		public:
 			virtual ~IBaseIntegerSorting() {}

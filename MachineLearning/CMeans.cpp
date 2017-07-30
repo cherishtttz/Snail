@@ -1,14 +1,13 @@
 #include "CMeans.h"
 #include <numeric>
 #include <algorithm>
-#include "snailCommon.h"
+#include "MachineLearningCommon.h"
 #include "Factory.h"
 #include "snailInterface.h"
 
-using namespace snail;
-using namespace snail::ClusteringAlgorithm;
+using namespace machineLearning::ClusteringAlgorithm;
 
-CFactory<CCMeans> theCreator(C_MEANS);
+snail::CFactory<CCMeans> theCreator(C_MEANS);
 
 CCMeans::CCMeans()
 {
@@ -65,10 +64,10 @@ void CCMeans::__updateFCM(const std::vector<std::vector<double>>& vDataset, cons
 		for (unsigned int j = 0; j < Col; ++j)
 		{
 			double Sum = 0.0;
-			double Dij = calculateEuclideanDistance(vDataset[i], vCenters[j]);
+			double Dij = snail::calculateEuclideanDistance(vDataset[i], vCenters[j]);
 			for (unsigned int l = 0; l < Col; ++l)
 			{
-				double Dil = calculateEuclideanDistance(vDataset[i], vCenters[l]);
+				double Dil = snail::calculateEuclideanDistance(vDataset[i], vCenters[l]);
 				Sum += std::pow((Dij + vEpsilon) / (Dil + vEpsilon), 2.0 / (vAlpha - 1.0));
 			}
 			voFCM[i][j] = 1.0 / Sum;
@@ -108,7 +107,7 @@ double CCMeans::__calculateObjectFunctionVal(const std::vector<std::vector<doubl
 	{
 		for (unsigned int i = 0; i < NumInstances; ++i)
 		{
-			Obj += std::pow(vFCM[i][j], vAlpha) * std::pow(calculateEuclideanDistance(vDataset[i], vCenters[j]), 2.0);
+			Obj += std::pow(vFCM[i][j], vAlpha) * std::pow(snail::calculateEuclideanDistance(vDataset[i], vCenters[j]), 2.0);
 		}
 	}
 	return Obj;

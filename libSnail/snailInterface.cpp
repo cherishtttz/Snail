@@ -6,12 +6,6 @@
 #include <fstream>
 #include <boost/algorithm/string.hpp>
 #include <boost/lexical_cast.hpp>
-#include "BaseIntegerSorting.h"
-
-using namespace snail;
-using namespace snail::SortingAlgorithm;
-using namespace snail::ClusteringAlgorithm;
-using namespace snail::RegressionAnalysis;
 
 //****************************************************************************************************
 //FUNCTION:
@@ -113,68 +107,34 @@ bool snail::snailReadDatasetFromFile(const std::string& vDataFile, std::vector<s
 
 //****************************************************************************************************
 //FUNCTION:
-CBaseProduct* snail::snailCreateProduct(const std::string& vSig)
+snail::CBaseProduct* snail::snailCreateProduct(const std::string& vSig)
 {
 	_ASSERTE(!vSig.empty());
-	return CProductRegistry::getInstance()->createProduct(vSig);
+	return snail::CProductRegistry::getInstance()->createProduct(vSig);
 }
 
 //****************************************************************************************************
 //FUNCTION:
-void snail::SortingAlgorithm::snailSortIntegersSet(std::vector<int>& voIntegersSet, const std::string& vAlgorithmSig)
+double snail::calculateEuclideanDistance(const std::vector<double>& v1, const std::vector<double>& v2)
 {
-	_ASSERTE(!voIntegersSet.empty() && !vAlgorithmSig.empty());
-	std::shared_ptr<IBaseIntegerSorting> pSortAlgorithm = std::shared_ptr<IBaseIntegerSorting>(dynamic_cast<IBaseIntegerSorting*>(snailCreateProduct(vAlgorithmSig)));
-	pSortAlgorithm->sortIntegersSetV(voIntegersSet);
+	_ASSERTE(v1.size() == v2.size());
+	double Sum = 0.0;
+	for (unsigned int i = 0; i < v1.size(); ++i)
+		Sum += std::pow(std::abs(v1[i] - v2[i]), 2.0);
+	return std::pow(Sum, 0.5);
 }
 
 //****************************************************************************************************
 //FUNCTION:
-void snail::ClusteringAlgorithm::clusterDataIntoGroups(const std::vector<std::vector<double>>& vOriginalDataset, const std::vector<int>& vFeatureIndexSet, int vNumGroups, const std::string& vClusterAlgorithm, std::vector<SCluster>& voClusters, double vAlpha /*= 2.1*/, double vEpsilon /*= 0.00000001*/, int vMaxIteration /*= 100*/, double vThreshold /*= 0.000000000001*/)
+double snail::calculateEuclideanDistance(const std::vector<double>& v1, const std::vector<double>& v2, const std::vector<int>& vUsingFeatureIndexSet)
 {
-	_ASSERTE(!vClusterAlgorithm.empty() && vNumGroups >= 1 && !vFeatureIndexSet.empty() && !vOriginalDataset.empty());
-	int MaxColumn = vOriginalDataset[0].size();
-	for (auto Itr : vFeatureIndexSet)
-		_ASSERTE(Itr >= 0 && Itr < MaxColumn);
-
-#ifdef DEBUG
-	_Log("Arguments checking passed.");
-#endif
-
-	std::shared_ptr<IBaseCluster> pClusterAlgorithm = std::shared_ptr<IBaseCluster>(dynamic_cast<IBaseCluster*>(snailCreateProduct(vClusterAlgorithm)));
-
-	voClusters.clear();
-	pClusterAlgorithm->clusterDataIntoGroups(vOriginalDataset, vFeatureIndexSet, vNumGroups, voClusters, vAlpha, vEpsilon, vMaxIteration, vThreshold);
-}
-
-//****************************************************************************************************
-//FUNCTION:
-IBaseLinearRegression* snail::RegressionAnalysis::snailTrainLinearRegressionModel(const std::vector<std::vector<double>>& vInput, const std::vector<double>& vOutput, const std::string& vModelSig)
-{
-	_ASSERTE(!vInput.empty() && vInput.size() == vOutput.size() && !vModelSig.empty());
-
-	IBaseLinearRegression* pRegressionModel = dynamic_cast<IBaseLinearRegression*>(snailCreateProduct(vModelSig));
-	pRegressionModel->trainV(vInput, vOutput);
-
-	return pRegressionModel;
-}
-
-//****************************************************************************************************
-//FUNCTION:
-void snail::RegressionAnalysis::evaluateLinearRegressionModel(const std::vector<std::vector<double>>& vInput, const std::vector<double>& vOutput, const IBaseLinearRegression* vModel)
-{
-	_ASSERTE(!vInput.empty() && vInput.size() == vOutput.size() && vModel);
-	double RSS = 0.0;
-	std::vector<double> DifferSet;
-	for (auto i = 0; i < vOutput.size(); ++i)
+	_ASSERTE(v1.size() == v2.size());
+	std::vector<double> Sample1, Sample2;
+	for (auto Itr : vUsingFeatureIndexSet)
 	{
-		double PredictResult = vModel->predictV(vInput[i]);
-		std::cout << "Predict the " << i + 1 << " th sample, original = " << vOutput[i] << ", predict value = " << PredictResult << ".\n";
-		DifferSet.push_back(std::abs(vOutput[i] - PredictResult));
-		RSS += std::pow(std::abs(vOutput[i] - PredictResult), 2.0);
+		_ASSERTE(Itr < v1.size());
+		Sample1.push_back(v1[Itr]);
+		Sample2.push_back(v2[Itr]);
 	}
-	std::cout << "Minimum error : " << *std::min_element(DifferSet.begin(), DifferSet.end()) << "\n";
-	std::cout << "Maximum error : " << *std::max_element(DifferSet.begin(), DifferSet.end()) << "\n";
-	std::cout << "Average error : " << std::accumulate(DifferSet.begin(), DifferSet.end(), 0.0) / DifferSet.size() << "\n";
-	std::cout << "Rss reached value : " << RSS << "\n\n";
+	return calculateEuclideanDistance(Sample1, Sample2);
 }
